@@ -47,8 +47,8 @@ const Skilllist = () => {
       <Skill skill="JavaScript" emoji="🤚" color="yellow" />
       <Skill skill="Python" emoji="🏄" color="orange" />
       <Skill skill="Web Design" emoji="🏎️" color="green" />
-      <Skill skill="Git and Github" emoji="🐍" color="green" />
-      <Skill skill="React" emoji="👏" color="green" />
+      <Skill skill="Git and Github" emoji="🐍" color="pink" />
+      <Skill skill="React" emoji="👏" color="blue" />
     </div>
   );
 };
