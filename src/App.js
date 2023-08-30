@@ -40,7 +40,7 @@ const Intro = () => {
   );
 };
 
-const Skilllist = (props) => {
+const Skilllist = () => {
   return (
     <div className="skill-list">
       <Skill skill="HTML + CSS" emoji="💪" color="orangered" />
