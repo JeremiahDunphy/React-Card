@@ -1,4 +1,5 @@
 import "./styles.css";
+import { skills } from "./data.js";
 
 export default function App() {
   return (
@@ -11,7 +12,7 @@ export default function App() {
           // web development skill that you have,
           // customized with props.
         }
-        <Skilllist />
+        <Skillist />
       </div>
     </div>
   );
@@ -40,24 +41,41 @@ const Intro = () => {
   );
 };
 
-const Skilllist = () => {
+const Skillist = () => {
   return (
-    <div className="skill-list">
-      <Skill skill="HTML + CSS" emoji="💪" color="orangered" />
-      <Skill skill="JavaScript" emoji="🤚" color="yellow" />
-      <Skill skill="Python" emoji="🏄" color="orange" />
-      <Skill skill="Web Design" emoji="🏎️" color="green" />
-      <Skill skill="Git and Github" emoji="🐍" color="pink" />
-      <Skill skill="React" emoji="👏" color="blue" />
-    </div>
+    <ul className="skill-list">
+      {skills.map((skillData, Index) => (
+        <Skill
+          key={Index}
+          skill={skillData.skill}
+          emoji={skillData.emoji}
+          color={skillData.color}
+          level={skillData.level}
+        />
+      ))}
+    </ul>
   );
 };
 
-const Skill = (props) => {
+const Skill = ({ skill, emoji, color, level }) => {
+  switch (level) {
+    case "Advanced":
+      level = "💪";
+      break;
+    case "Intermediate":
+      level = "👍🏻";
+      break;
+    case "Beginner":
+      level = "👶🏻";
+      break;
+    default:
+      throw new Error("Invalid Level");
+  }
+
   return (
-    <div className="skill" style={{ backgroundColor: props.color }}>
-      <span>{props.skill}</span>
-      <span>{props.emoji}</span>
+    <div className="skill" style={{ backgroundColor: color }}>
+      <span>{skill}</span>
+      <span>{level}</span>
     </div>
   );
 };

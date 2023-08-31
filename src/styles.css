@@ -52,3 +52,7 @@ h1 {
   gap: 8px;
   font-weight: 500;
 }
+
+li {
+  list-style-type: none;
+}
